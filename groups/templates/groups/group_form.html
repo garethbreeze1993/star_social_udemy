@@ -1,0 +1,11 @@
+{% extends 'groups/group_base.html' %}
+{% load bootstrap3 %}
+{% block group_content %}
+<h3>Create a new group!</h3>
+<form action="{% url 'groups:create' %}" method="POST" id="group-form"> <!-- Action says The action attribute says where to send the form data when the form is submitted.
+in this case it sends it to this page the create view -->
+{% csrf_token %}
+{% bootstrap_form form %}
+<input type='submit' class="btn btn-primary btn-large" value="Create Group">
+</form>
+{% endblock %}
